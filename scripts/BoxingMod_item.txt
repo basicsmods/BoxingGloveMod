@@ -3,7 +3,7 @@ module Base
 	item BoxingGloveRed1
 	{
 	    DisplayCategory = Weapon,
-		MaxRange	=	0.90,
+		MaxRange	=	0.85,
 		WeaponSprite	=	null,
 		MinAngle	=	0.67,
 		Type	=	Weapon,
@@ -44,7 +44,7 @@ module Base
 	item BoxingGloveRed2
     {
         DisplayCategory = Weapon,
-		MaxRange	=	0.90,
+		MaxRange	=	0.85,
 		WeaponSprite	=	null,
 		MinAngle	=	0.67,
 		Type	=	Weapon,
@@ -85,7 +85,7 @@ module Base
 	item BoxingGloveRed3
     {
         DisplayCategory = Weapon,
-		MaxRange	=	0.90,
+		MaxRange	=	0.85,
 		WeaponSprite	=	null,
 		MinAngle	=	0.67,
 		Type	=	Weapon,
@@ -126,7 +126,7 @@ module Base
     item BoxingGloveBlue1
 	{
 	    DisplayCategory = Weapon,
-		MaxRange	=	0.90,
+		MaxRange	=	0.85,
 		WeaponSprite	=	null,
 		MinAngle	=	0.67,
 		Type	=	Weapon,
@@ -167,7 +167,7 @@ module Base
 	item BoxingGloveBlue2
     {
         DisplayCategory = Weapon,
-		MaxRange	=	0.90,
+		MaxRange	=	0.85,
 		WeaponSprite	=	null,
 		MinAngle	=	0.67,
 		Type	=	Weapon,
@@ -208,7 +208,7 @@ module Base
 	item BoxingGloveBlue3
     {
         DisplayCategory = Weapon,
-		MaxRange	=	0.90,
+		MaxRange	=	0.85,
 		WeaponSprite	=	null,
 		MinAngle	=	0.67,
 		Type	=	Weapon,
