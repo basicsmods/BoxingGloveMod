@@ -2,16 +2,10 @@ function ManageGlovesRed1()
 	local player = getPlayer()
 	local inv = player:getInventory()
 	local weap = inv:FindAndReturn("Base.BoxingGloveRed1")
-	local gloves = inv:FindAndReturn("Base.Gloves_BoxingRed")
 	if not weap then
-		if gloves then
-			if player:isEquipped(gloves) then
-				player:removeWornItem(gloves)
-			end
-			inv:Remove(gloves)
-		end
 		return
 	end
+	local gloves = inv:FindAndReturn("Base.Gloves_BoxingRed")
 	local weap_equipped = player:isEquipped(weap)
 
 	if not weap_equipped then
@@ -32,13 +26,11 @@ function ManageGlovesRed1()
 
 	if weap_equipped then
 		if not gloves then
-            player:Say("1")
 			inv:AddItem("Base.Gloves_BoxingRed")
 			gloves = inv:FindAndReturn("Base.Gloves_BoxingRed")
 		end
 		if not gloves_equipped then
 			player:setWornItem(gloves:getBodyLocation(), gloves)
-            player:Say("2")
 		end
 	else 
 		if gloves then
@@ -54,16 +46,10 @@ function ManageGlovesRed2()
 	local player = getPlayer()
 	local inv = player:getInventory()
 	local weap = inv:FindAndReturn("Base.BoxingGloveRed2")
-	local gloves = inv:FindAndReturn("Base.Gloves_BoxingRed")
 	if not weap then
-		if gloves then
-			if player:isEquipped(gloves) then
-				player:removeWornItem(gloves)
-			end
-			inv:Remove(gloves)
-		end
 		return
 	end
+	local gloves = inv:FindAndReturn("Base.Gloves_BoxingRed")
 	local weap_equipped = player:isEquipped(weap)
 	
 	if not weap_equipped then
@@ -104,16 +90,10 @@ function ManageGlovesRed3()
 	local player = getPlayer()
 	local inv = player:getInventory()
 	local weap = inv:FindAndReturn("Base.BoxingGloveRed3")
-	local gloves = inv:FindAndReturn("Base.Gloves_BoxingRed")
 	if not weap then
-		if gloves then
-			if player:isEquipped(gloves) then
-				player:removeWornItem(gloves)
-			end
-			inv:Remove(gloves)
-		end
 		return
 	end
+	local gloves = inv:FindAndReturn("Base.Gloves_BoxingRed")
 	local weap_equipped = player:isEquipped(weap)
 	
 	if not weap_equipped then
@@ -154,16 +134,10 @@ function ManageGlovesBlue1()
 	local player = getPlayer()
 	local inv = player:getInventory()
 	local weap = inv:FindAndReturn("Base.BoxingGloveBlue1")
-	local gloves = inv:FindAndReturn("Base.Gloves_BoxingBlue")
 	if not weap then
-		if gloves then
-			if player:isEquipped(gloves) then
-				player:removeWornItem(gloves)
-			end
-			inv:Remove(gloves)
-		end
 		return
 	end
+	local gloves = inv:FindAndReturn("Base.Gloves_BoxingBlue")
 	local weap_equipped = player:isEquipped(weap)
 	
 	if not weap_equipped then
@@ -204,16 +178,10 @@ function ManageGlovesBlue2()
 	local player = getPlayer()
 	local inv = player:getInventory()
 	local weap = inv:FindAndReturn("Base.BoxingGloveBlue2")
-	local gloves = inv:FindAndReturn("Base.Gloves_BoxingBlue")
 	if not weap then
-		if gloves then
-			if player:isEquipped(gloves) then
-				player:removeWornItem(gloves)
-			end
-			inv:Remove(gloves)
-		end
 		return
 	end
+	local gloves = inv:FindAndReturn("Base.Gloves_BoxingBlue")
 	local weap_equipped = player:isEquipped(weap)
 	
 	if not weap_equipped then
@@ -254,16 +222,10 @@ function ManageGlovesBlue3()
 	local player = getPlayer()
 	local inv = player:getInventory()
 	local weap = inv:FindAndReturn("Base.BoxingGloveBlue3")
-	local gloves = inv:FindAndReturn("Base.Gloves_BoxingBlue")
 	if not weap then
-		if gloves then
-			if player:isEquipped(gloves) then
-				player:removeWornItem(gloves)
-			end
-			inv:Remove(gloves)
-		end
 		return
 	end
+	local gloves = inv:FindAndReturn("Base.Gloves_BoxingBlue")
 	local weap_equipped = player:isEquipped(weap)
 	
 	if not weap_equipped then
