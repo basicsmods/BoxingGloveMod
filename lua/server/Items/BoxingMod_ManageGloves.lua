@@ -32,11 +32,13 @@ function ManageGlovesRed1()
 
 	if weap_equipped then
 		if not gloves then
+            player:Say("1")
 			inv:AddItem("Base.Gloves_BoxingRed")
 			gloves = inv:FindAndReturn("Base.Gloves_BoxingRed")
 		end
 		if not gloves_equipped then
 			player:setWornItem(gloves:getBodyLocation(), gloves)
+            player:Say("2")
 		end
 	else 
 		if gloves then
@@ -304,3 +306,17 @@ Events.OnEquipPrimary.Add(ManageGlovesRed3)
 Events.OnEquipPrimary.Add(ManageGlovesBlue1)
 Events.OnEquipPrimary.Add(ManageGlovesBlue2)
 Events.OnEquipPrimary.Add(ManageGlovesBlue3)
+
+--[[
+-- use this type of code to implement mod options for changing the weapon stats
+local new_weight = 0.01
+function testFunc99()
+    item = ScriptManager.instance:getItem("Base.BoxingGloveRed1")
+    if item then
+        item:DoParam("Weight = "..new_weight)
+        new_weight = new_weight + 0.01
+    end
+    return
+end
+
+Events.EveryOneMinute.Add(testFunc99)--]]
