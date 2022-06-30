@@ -33,9 +33,9 @@ require "Items/ItemPicker"
 	
 	
 	table.insert(SuburbsDistributions["all"]["inventorymale"].items, "Base.Hat_BoxingRed1");
-	table.insert(SuburbsDistributions["all"]["inventorymale"].items, 15);
+	table.insert(SuburbsDistributions["all"]["inventorymale"].items, 5);
 	table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, "Base.Hat_BoxingRed1");
-	table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, 15);
+	table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, 5);
 	table.insert(SuburbsDistributions["all"]["inventorymale"].items, "Base.Hat_BoxingRed2");
 	table.insert(SuburbsDistributions["all"]["inventorymale"].items, 1);
 	table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, "Base.Hat_BoxingRed2");
@@ -46,9 +46,9 @@ require "Items/ItemPicker"
 	table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, 0.1);
 	
 	table.insert(SuburbsDistributions["all"]["inventorymale"].items, "Base.Hat_BoxingBlue1");
-	table.insert(SuburbsDistributions["all"]["inventorymale"].items, 15);
+	table.insert(SuburbsDistributions["all"]["inventorymale"].items, 5);
 	table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, "Base.Hat_BoxingBlue1");
-	table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, 15);
+	table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, 5);
 	table.insert(SuburbsDistributions["all"]["inventorymale"].items, "Base.Hat_BoxingBlue2");
 	table.insert(SuburbsDistributions["all"]["inventorymale"].items, 1);
 	table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, "Base.Hat_BoxingBlue2");
@@ -60,13 +60,13 @@ require "Items/ItemPicker"
 	
 	
 	table.insert(SuburbsDistributions["all"]["inventorymale"].items, "Base.Shorts_BoxingRedCold");
-	table.insert(SuburbsDistributions["all"]["inventorymale"].items, 15);
+	table.insert(SuburbsDistributions["all"]["inventorymale"].items, 5);
 	table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, "Base.Shorts_BoxingRedCold");
 	table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, 0.1);
 	table.insert(SuburbsDistributions["all"]["inventorymale"].items, "Base.Shorts_BoxingBlueCold");
 	table.insert(SuburbsDistributions["all"]["inventorymale"].items, 0.1);
 	table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, "Base.Shorts_BoxingBlueCold");
-	table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, 15);
+	table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, 5);
 	
 	table.insert(SuburbsDistributions["all"]["inventorymale"].items, "Base.Shorts_BoxingRedWarm");
 	table.insert(SuburbsDistributions["all"]["inventorymale"].items, 2);
