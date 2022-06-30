@@ -1,273 +1,100 @@
-function ManageGlovesRed1()
+function ManageGlovesRed()
 	local player = getPlayer()
 	local inv = player:getInventory()
-	local weap = inv:FindAndReturn("Base.BoxingGloveRed1")
-	if not weap then
-		return
-	end
-	local gloves = inv:FindAndReturn("Base.Gloves_BoxingRed")
-	local weap_equipped = player:isEquipped(weap)
+	local weap1 = inv:FindAndReturn("Base.BoxingGloveRed1")
+    local weap2 = inv:FindAndReturn("Base.BoxingGloveRed2")
+    local weap3 = inv:FindAndReturn("Base.BoxingGloveRed3")
 
-	if not weap_equipped then
-		local weap2 = inv:FindAndReturn("Base.BoxingGloveRed2")
-		if weap2 and player:isEquipped(weap2) then
-			return
-		end
-		local weap3 = inv:FindAndReturn("Base.BoxingGloveRed3")
-		if weap3 and player:isEquipped(weap3) then
-			return
-		end
-	end
-
-	local gloves_equipped = false
+    local gloves = inv:FindAndReturn("Base.Gloves_BoxingRed")
+    local gloves_equipped = false
 	if gloves then
 		gloves_equipped = player:isEquipped(gloves)
 	end
 
-	if weap_equipped then
-		if not gloves then
-			inv:AddItem("Base.Gloves_BoxingRed")
+	if not weap1 and not weap2 and not weap3 then
+        -- we could be here but still have gloves to delete if the player
+        -- just dropped their equipped gloves
+        if gloves then
+            if gloves_equipped then
+                player:removeWornItem(gloves)
+			end
+			inv:Remove(gloves)
+        end
+		return
+	end
+
+	local weap_equipped1 = player:isEquipped(weap1)
+    local weap_equipped2 = player:isEquipped(weap2)
+    local weap_equipped3 = player:isEquipped(weap3)
+
+    if weap_equipped1 or weap_equipped2 or weap_equipped3 then
+        if not gloves then
+            inv:AddItem("Base.Gloves_BoxingRed")
 			gloves = inv:FindAndReturn("Base.Gloves_BoxingRed")
-		end
-		if not gloves_equipped then
-			player:setWornItem(gloves:getBodyLocation(), gloves)
-		end
-	else 
-		if gloves then
-			if gloves_equipped then
-				player:removeWornItem(gloves)
+        end
+        if not gloves_equipped then
+            player:setWornItem(gloves:getBodyLocation(), gloves)
+        end
+    else
+        if gloves then
+            if gloves_equipped then
+                player:removeWornItem(gloves)
 			end
 			inv:Remove(gloves)
-		end
-	end
+        end
+    end
 end
 
-function ManageGlovesRed2()
+function ManageGlovesBlue()
 	local player = getPlayer()
 	local inv = player:getInventory()
-	local weap = inv:FindAndReturn("Base.BoxingGloveRed2")
-	if not weap then
-		return
-	end
-	local gloves = inv:FindAndReturn("Base.Gloves_BoxingRed")
-	local weap_equipped = player:isEquipped(weap)
-	
-	if not weap_equipped then
-		local weap1 = inv:FindAndReturn("Base.BoxingGloveRed1")
-		if weap1 and player:isEquipped(weap1) then
-			return
-		end
-		local weap3 = inv:FindAndReturn("Base.BoxingGloveRed3")
-		if weap3 and player:isEquipped(weap3) then
-			return
-		end
-	end
+	local weap1 = inv:FindAndReturn("Base.BoxingGloveBlue1")
+    local weap2 = inv:FindAndReturn("Base.BoxingGloveBlue2")
+    local weap3 = inv:FindAndReturn("Base.BoxingGloveBlue3")
 
-	local gloves_equipped = false
+    local gloves = inv:FindAndReturn("Base.Gloves_BoxingBlue")
+    local gloves_equipped = false
 	if gloves then
 		gloves_equipped = player:isEquipped(gloves)
 	end
 
-	if weap_equipped then
-		if not gloves then
-			inv:AddItem("Base.Gloves_BoxingRed")
-			gloves = inv:FindAndReturn("Base.Gloves_BoxingRed")
-		end
-		if not gloves_equipped then
-			player:setWornItem(gloves:getBodyLocation(), gloves)
-		end
-	else 
-		if gloves then
-			if gloves_equipped then
-				player:removeWornItem(gloves)
+	if not weap1 and not weap2 and not weap3 then
+        -- we could be here but still have gloves to delete if the player
+        -- just dropped their equipped gloves
+        if gloves then
+            if gloves_equipped then
+                player:removeWornItem(gloves)
 			end
 			inv:Remove(gloves)
-		end
-	end
-end
-
-function ManageGlovesRed3()
-	local player = getPlayer()
-	local inv = player:getInventory()
-	local weap = inv:FindAndReturn("Base.BoxingGloveRed3")
-	if not weap then
+        end
 		return
 	end
-	local gloves = inv:FindAndReturn("Base.Gloves_BoxingRed")
-	local weap_equipped = player:isEquipped(weap)
-	
-	if not weap_equipped then
-		local weap2 = inv:FindAndReturn("Base.BoxingGloveRed2")
-		if weap2 and player:isEquipped(weap2) then
-			return
-		end
-		local weap1 = inv:FindAndReturn("Base.BoxingGloveRed1")
-		if weap1 and player:isEquipped(weap1) then
-			return
-		end
-	end
 
-	local gloves_equipped = false
-	if gloves then
-		gloves_equipped = player:isEquipped(gloves)
-	end
+	local weap_equipped1 = player:isEquipped(weap1)
+    local weap_equipped2 = player:isEquipped(weap2)
+    local weap_equipped3 = player:isEquipped(weap3)
 
-	if weap_equipped then
-		if not gloves then
-			inv:AddItem("Base.Gloves_BoxingRed")
-			gloves = inv:FindAndReturn("Base.Gloves_BoxingRed")
-		end
-		if not gloves_equipped then
-			player:setWornItem(gloves:getBodyLocation(), gloves)
-		end
-	else 
-		if gloves then
-			if gloves_equipped then
-				player:removeWornItem(gloves)
-			end
-			inv:Remove(gloves)
-		end
-	end
-end
-
-function ManageGlovesBlue1()
-	local player = getPlayer()
-	local inv = player:getInventory()
-	local weap = inv:FindAndReturn("Base.BoxingGloveBlue1")
-	if not weap then
-		return
-	end
-	local gloves = inv:FindAndReturn("Base.Gloves_BoxingBlue")
-	local weap_equipped = player:isEquipped(weap)
-	
-	if not weap_equipped then
-		local weap2 = inv:FindAndReturn("Base.BoxingGloveBlue2")
-		if weap2 and player:isEquipped(weap2) then
-			return
-		end
-		local weap3 = inv:FindAndReturn("Base.BoxingGloveBlue3")
-		if weap3 and player:isEquipped(weap3) then
-			return
-		end
-	end
-
-	local gloves_equipped = false
-	if gloves then
-		gloves_equipped = player:isEquipped(gloves)
-	end
-
-	if weap_equipped then
-		if not gloves then
-			inv:AddItem("Base.Gloves_BoxingBlue")
+    if weap_equipped1 or weap_equipped2 or weap_equipped3 then
+        if not gloves then
+            inv:AddItem("Base.Gloves_BoxingBlue")
 			gloves = inv:FindAndReturn("Base.Gloves_BoxingBlue")
-		end
-		if not gloves_equipped then
-			player:setWornItem(gloves:getBodyLocation(), gloves)
-		end
-	else 
-		if gloves then
-			if gloves_equipped then
-				player:removeWornItem(gloves)
+        end
+        if not gloves_equipped then
+            player:setWornItem(gloves:getBodyLocation(), gloves)
+        end
+    else
+        if gloves then
+            if gloves_equipped then
+                player:removeWornItem(gloves)
 			end
 			inv:Remove(gloves)
-		end
-	end
+        end
+    end
 end
 
-function ManageGlovesBlue2()
-	local player = getPlayer()
-	local inv = player:getInventory()
-	local weap = inv:FindAndReturn("Base.BoxingGloveBlue2")
-	if not weap then
-		return
-	end
-	local gloves = inv:FindAndReturn("Base.Gloves_BoxingBlue")
-	local weap_equipped = player:isEquipped(weap)
-	
-	if not weap_equipped then
-		local weap1 = inv:FindAndReturn("Base.BoxingGloveBlue1")
-		if weap1 and player:isEquipped(weap1) then
-			return
-		end
-		local weap3 = inv:FindAndReturn("Base.BoxingGloveBlue3")
-		if weap3 and player:isEquipped(weap3) then
-			return
-		end
-	end
+Events.OnEquipPrimary.Add(ManageGlovesRed)
+Events.OnEquipPrimary.Add(ManageGlovesBlue)
 
-	local gloves_equipped = false
-	if gloves then
-		gloves_equipped = player:isEquipped(gloves)
-	end
-
-	if weap_equipped then
-		if not gloves then
-			inv:AddItem("Base.Gloves_BoxingBlue")
-			gloves = inv:FindAndReturn("Base.Gloves_BoxingBlue")
-		end
-		if not gloves_equipped then
-			player:setWornItem(gloves:getBodyLocation(), gloves)
-		end
-	else 
-		if gloves then
-			if gloves_equipped then
-				player:removeWornItem(gloves)
-			end
-			inv:Remove(gloves)
-		end
-	end
-end
-
-function ManageGlovesBlue3()
-	local player = getPlayer()
-	local inv = player:getInventory()
-	local weap = inv:FindAndReturn("Base.BoxingGloveBlue3")
-	if not weap then
-		return
-	end
-	local gloves = inv:FindAndReturn("Base.Gloves_BoxingBlue")
-	local weap_equipped = player:isEquipped(weap)
-	
-	if not weap_equipped then
-		local weap2 = inv:FindAndReturn("Base.BoxingGloveBlue2")
-		if weap2 and player:isEquipped(weap2) then
-			return
-		end
-		local weap1 = inv:FindAndReturn("Base.BoxingGloveBlue1")
-		if weap1 and player:isEquipped(weap1) then
-			return
-		end
-	end
-
-	local gloves_equipped = false
-	if gloves then
-		gloves_equipped = player:isEquipped(gloves)
-	end
-
-	if weap_equipped then
-		if not gloves then
-			inv:AddItem("Base.Gloves_BoxingBlue")
-			gloves = inv:FindAndReturn("Base.Gloves_BoxingBlue")
-		end
-		if not gloves_equipped then
-			player:setWornItem(gloves:getBodyLocation(), gloves)
-		end
-	else 
-		if gloves then
-			if gloves_equipped then
-				player:removeWornItem(gloves)
-			end
-			inv:Remove(gloves)
-		end
-	end
-end
-
-Events.OnEquipPrimary.Add(ManageGlovesRed1)
-Events.OnEquipPrimary.Add(ManageGlovesRed2)
-Events.OnEquipPrimary.Add(ManageGlovesRed3)
-Events.OnEquipPrimary.Add(ManageGlovesBlue1)
-Events.OnEquipPrimary.Add(ManageGlovesBlue2)
-Events.OnEquipPrimary.Add(ManageGlovesBlue3)
 
 --[[
 -- use this type of code to implement mod options for changing the weapon stats
