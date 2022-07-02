@@ -1,3 +1,5 @@
+BoxingGloveMod.Settings = BoxingGloveMod.Settings or {}
+
 function ManageGlovesRed()
 	local player = getPlayer()
 	local inv = player:getInventory()
@@ -92,12 +94,28 @@ function ManageGlovesBlue()
     end
 end
 
+function ApplySettings()
+    -- if isClient() and self.playerIndex > 0 then
+    local new_weight = BoxingGloveMod.Settings:Get("WEAPON1_MIN_DMG")
+    if new_weight then
+        item = ScriptManager.instance:getItem("Base.BoxingGloveRed1")
+        if item then
+            item:DoParam("Weight = "..new_weight)
+        end
+    end
+end
+
 Events.OnEquipPrimary.Add(ManageGlovesRed)
 Events.OnEquipPrimary.Add(ManageGlovesBlue)
+--Events.EveryOneMinute.Add(ApplySettings)
 
 
 --[[
 -- use this type of code to implement mod options for changing the weapon stats
+-- doesn't seem to be a way to modify the repair recipe so instead of doing repair
+-- through the traditional way, we can add our own custom context menu and logic for
+-- repairing our weapon specifically.
+-- Events.OnFillInventoryObjectContextMenu.Add
 local new_weight = 0.01
 function testFunc99()
     item = ScriptManager.instance:getItem("Base.BoxingGloveRed1")

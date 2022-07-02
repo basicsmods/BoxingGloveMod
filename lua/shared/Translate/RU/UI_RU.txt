@@ -1,0 +1,18 @@
+UI_RU = {
+    UI_optionscreen_binding_Unpack = "Распаковать",
+    UI_optionscreen_binding_UnpackKey = "Сложить в ближайший контейнер",
+
+    UI_ContextMenu_PutItemsInContainerSingular = "Положить %1 предмет в %2",
+    UI_ContextMenu_PutItemsInContainerPlural = "Сложить %1 предметы в %2",
+    UI_WorldContextMenu_Stock = "Сложить",
+    UI_WorldContextMenu_StockContainerFrom = "Переложить %1 из %2",
+
+    UI_MenuOptions_ExcludeMannequinContainer = "Ignore Mannequins",
+    UI_MenuOptions_ExcludeMannequinContainerTooltip = "Check this to disable transferring items to Mannequins",
+    UI_MenuOptions_ExcludeTrashContainer = "Ignore Trash bins",
+    UI_MenuOptions_ExcludeTrashContainerTooltip = "Check this to disable transferring items to Trash",
+    UI_MenuOptions_DisableItemCategories = "Отключить кастомные категории",
+    UI_MenuOptions_DisableItemCategoriesTooltip = "Отключить кастомные категории мода. Требует перезагрузки игрового мира.",
+    UI_MenuOptions_ContainerPercentageItemCount = "Учитывать процент в контейнере",
+    UI_MenuOptions_ContainerPercentageItemCountTooltip = "Количество элементов которые должны быть в контейнере, прежде чем будет применена процентная конфигурация ниже.",
+}

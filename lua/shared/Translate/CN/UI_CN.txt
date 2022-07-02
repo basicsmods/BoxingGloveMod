@@ -1,0 +1,18 @@
+UI_CN = {
+    UI_optionscreen_binding_Unpack = "快捷存储",
+    UI_optionscreen_binding_UnpackKey = "存储到附近的容器",
+
+    UI_ContextMenu_PutItemsInContainerSingular = "放置 %1 物品到 %2",
+    UI_ContextMenu_PutItemsInContainerPlural = "放置 %1 物品到 %2",
+    UI_WorldContextMenu_Stock = "存储",
+    UI_WorldContextMenu_StockContainerFrom = "存储 %1 从 %2",
+
+    UI_MenuOptions_ExcludeMannequinContainer = "Ignore Mannequins",
+    UI_MenuOptions_ExcludeMannequinContainerTooltip = "Check this to disable transferring items to Mannequins",
+    UI_MenuOptions_ExcludeTrashContainer = "Ignore Trash bins",
+    UI_MenuOptions_ExcludeTrashContainerTooltip = "Check this to disable transferring items to Trash",
+    UI_MenuOptions_DisableItemCategories = "禁用该mod",
+    UI_MenuOptions_DisableItemCategoriesTooltip = "更改此设定，需要重新加载你的游戏世界.",
+    UI_MenuOptions_ContainerPercentageItemCount = "自定义物品种类上限",
+    UI_MenuOptions_ContainerPercentageItemCountTooltip = "当容器中该物品的分类低于你设定的值时，才会自动放入.",
+}
