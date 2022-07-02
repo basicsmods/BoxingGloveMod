@@ -1,8 +1,10 @@
-require("BoxingGloveMod/Constants");
+require("BoxingGloveMod/AAConstants");
 
 BoxingGloveMod.Settings = BoxingGloveMod.Settings or {};
 local defaultSettings = {
-    WEAPON1_WEIGHT = 0.5,
+    WEAPON1_DROPRATE = 4,
+    WEAPON2_DROPRATE = 1,
+    WEAPON3_DROPRATE = 0.1
 };
 
 ---

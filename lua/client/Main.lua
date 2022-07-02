@@ -1,4 +1,4 @@
-function BoxingGloveMod:InitOptions()
+--[[function BoxingGloveMod:InitOptions()
     local Settings = BoxingGloveMod.Settings;
 
     -- load settings
@@ -20,23 +20,69 @@ function BoxingGloveMod:InitOptions()
         scrollHeight = scrollHeight + delta + amount + padding;
     end
 
-    -- create dropdowns for weapon
-    local weight_options = {"0.05", "0.10", "0.15", "0.20", "0.25", "0.30", "0.35", "0.40", "0.45", "0.50", "0.55", "0.60", "0.65", "0.70", "0.75", "0.80", "0.85", "0.90", "0.95", "1.0", "1.25", "1.50", "1.75", "2.0", "3.0", "4.0", "5.0", "10.0"};
+    -- message drop down
+    local msgs = {"Thanks :)"};
     ypos = ypos + delta;
-    local weaponComboBox = MainOptions.instance:addCombo(splitpoint, ypos, comboWidth, 20, getText("UI_Weapon1"), weight_options, 1);
-    local weaponComboOption = BoxingGloveMod.GameOption:new('weaponComboBox', weaponComboBox);
-    function weaponComboOption.toUI(self)
-        self.control:select(weight);
+    local msgComboBox = MainOptions.instance:addCombo(splitpoint, ypos, comboWidth, 20, getText("Lua will reload when you hit Apply (may freeze temporarily)."), msgs, 1);
+    local msgComboOption = BoxingGloveMod.GameOption:new('ReloadPls', msgComboBox);
+    MainOptions.instance.gameOptions:add(msgComboOption);
+    addScrollHeight(msgComboBox:getHeight());
+    ypos = ypos + delta;
+    local msgComboBox2 = MainOptions.instance:addCombo(splitpoint, ypos, comboWidth, 20, getText("Only server host's settings apply."), msgs, 1);
+    local msgComboOption2 = BoxingGloveMod.GameOption:new('ReloadPls', msgComboBox2);
+    MainOptions.instance.gameOptions:add(msgComboOption2);
+    addScrollHeight(msgComboBox2:getHeight());
+
+    -- create dropdowns for droprates
+    local droprates = {"0","0.01","0.05","0.1","0.2","0.3","0.4","0.5","0.75","1","1.25","1.5","2","2.5","3","3.5","4","5","7.5","10","15","20","25","50","150"};
+    ypos = ypos + delta;
+    local dropRateComboBox = MainOptions.instance:addCombo(splitpoint, ypos, comboWidth, 20, getText("UI_Droprate"), droprates, 1);
+    local dropRateComboOption = BoxingGloveMod.GameOption:new('dropRateComboBox', dropRateComboBox);
+    function dropRateComboOption.toUI(self)
+        self.control:select(BoxingGloveMod.Settings:Get("WEAPON1_DROPRATE"));
     end
-    function weaponComboOption.apply(self)
+    function dropRateComboOption.apply(self)
         local value = self.control.options[self.control.selected];
 
         -- serialize category option
-        Settings:Set("WEAPON1_WEIGHT", value);
+        Settings:Set("WEAPON1_DROPRATE", value);
         Settings:Serialize();
     end
-    MainOptions.instance.gameOptions:add(weaponComboOption);
-    addScrollHeight(weaponComboBox:getHeight());
+    MainOptions.instance.gameOptions:add(dropRateComboOption);
+    addScrollHeight(dropRateComboBox:getHeight());
+
+    ypos = ypos + delta;
+    local dropRateComboBox2 = MainOptions.instance:addCombo(splitpoint, ypos, comboWidth, 20, getText("UI_Droprate2"), droprates, 1);
+    local dropRateComboOption2 = BoxingGloveMod.GameOption:new('dropRateComboBox2', dropRateComboBox2);
+    function dropRateComboOption2.toUI(self)
+        self.control:select(BoxingGloveMod.Settings:Get("WEAPON2_DROPRATE"));
+    end
+    function dropRateComboOption2.apply(self)
+        local value = self.control.options[self.control.selected];
+
+        -- serialize category option
+        Settings:Set("WEAPON2_DROPRATE", value);
+        Settings:Serialize();
+    end
+    MainOptions.instance.gameOptions:add(dropRateComboOption2);
+    addScrollHeight(dropRateComboBox2:getHeight());
+
+    ypos = ypos + delta;
+    local dropRateComboBox3 = MainOptions.instance:addCombo(splitpoint, ypos, comboWidth, 20, getText("UI_Droprate3"), droprates, 1);
+    local dropRateComboOption3 = BoxingGloveMod.GameOption:new('dropRateComboBox3', dropRateComboBox3);
+    function dropRateComboOption3.toUI(self)
+        self.control:select(BoxingGloveMod.Settings:Get("WEAPON3_DROPRATE"));
+    end
+    function dropRateComboOption3.apply(self)
+        local value = self.control.options[self.control.selected];
+
+        -- serialize category option
+        Settings:Set("WEAPON3_DROPRATE", value);
+        Settings:Serialize();
+        getCore():ResetLua(true, "modsChanged")
+    end
+    MainOptions.instance.gameOptions:add(dropRateComboOption3);
+    addScrollHeight(dropRateComboBox3:getHeight());
 
     -- set our panel scroll height
     MainOptions.instance.mainPanel:setScrollHeight(scrollHeight + delta);

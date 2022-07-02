@@ -1,0 +1,304 @@
+VERSION = 1,
+
+option BoxingGloveMod.EveryoneIsBoxingGloveMod
+{
+	type = boolean, default = false,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod,
+}
+
+option BoxingGloveMod.Weight
+{
+	type = double, min = 0.01, max = 5, default = 0.5,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_Weight,
+}
+
+option BoxingGloveMod.BoxingGlove1Preset
+{
+	type = enum,
+	numValues = 5,
+	default = 1,
+
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_BoxingGlove1Preset,
+	valueTranslation = BoxingGloveMod_BoxingGlove1Preset,
+}
+
+option BoxingGloveMod.MinDamage1
+{
+	type = double, min = 0.01, max = 20, default = 0.25,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_MinDamage,
+}
+
+option BoxingGloveMod.MaxDamage1
+{
+	type = double, min = 0.01, max = 20, default = 0.45,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_MaxDamage,
+}
+
+option BoxingGloveMod.MinRange1
+{
+	type = double, min = 0.01, max = 1, default = 0.25,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_MinRange,
+}
+
+option BoxingGloveMod.MaxRange1
+{
+	type = double, min = 0.01, max = 2, default = 0.85,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_MaxRange,
+}
+
+option BoxingGloveMod.BaseSpeed1
+{
+	type = double, min = 0.01, max = 20, default = 1.3,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_BaseSpeed,
+}
+
+option BoxingGloveMod.CriticalChance1
+{
+	type = double, min = 0.01, max = 100, default = 15,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_CriticalChance,
+}
+
+option BoxingGloveMod.CritDmgMultiplier1
+{
+	type = double, min = 0.01, max = 10, default = 2,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_CritDmgMultiplier,
+}
+
+option BoxingGloveMod.MaxDurability1
+{
+	type = integer, min = 0, max = 100, default = 8,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_MaxDurability,
+}
+
+option BoxingGloveMod.DurabilityLossOneIn1
+{
+	type = integer, min = 0, max = 500, default = 14,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_DurabilityLossOneIn,
+}
+
+option BoxingGloveMod.PushBackMod1
+{
+	type = double, min = 0.01, max = 10, default = 0.5,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_PushBackMod,
+}
+
+option BoxingGloveMod.KnockdownMod1
+{
+	type = double, min = 0.01, max = 100, default = 0.3,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_KnockdownMod,
+}
+
+option BoxingGloveMod.TreeDamage1
+{
+	type = double, min = 0.01, max = 100, default = 0,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_TreeDamage,
+}
+
+
+
+option BoxingGloveMod.BoxingGlove2Preset
+{
+	type = enum,
+	numValues = 5,
+	default = 1,
+
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_BoxingGlove2Preset,
+	valueTranslation = BoxingGloveMod_BoxingGlove2Preset,
+}
+
+option BoxingGloveMod.MinDamage2
+{
+	type = double, min = 0.01, max = 20, default = 0.40,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_MinDamage,
+}
+
+option BoxingGloveMod.MaxDamage2
+{
+	type = double, min = 0.01, max = 20, default = 0.60,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_MaxDamage,
+}
+
+option BoxingGloveMod.MinRange2
+{
+	type = double, min = 0.01, max = 1, default = 0.25,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_MinRange,
+}
+
+option BoxingGloveMod.MaxRange2
+{
+	type = double, min = 0.01, max = 2, default = 0.85,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_MaxRange,
+}
+
+option BoxingGloveMod.BaseSpeed2
+{
+	type = double, min = 0.01, max = 20, default = 1.3,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_BaseSpeed,
+}
+
+option BoxingGloveMod.CriticalChance2
+{
+	type = double, min = 0.01, max = 100, default = 20,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_CriticalChance,
+}
+
+option BoxingGloveMod.CritDmgMultiplier2
+{
+	type = double, min = 0.01, max = 10, default = 2,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_CritDmgMultiplier,
+}
+
+option BoxingGloveMod.MaxDurability2
+{
+	type = integer, min = 0, max = 100, default = 15,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_MaxDurability,
+}
+
+option BoxingGloveMod.DurabilityLossOneIn2
+{
+	type = integer, min = 0, max = 500, default = 15,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_DurabilityLossOneIn,
+}
+
+option BoxingGloveMod.PushBackMod2
+{
+	type = double, min = 0.01, max = 10, default = 0.5,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_PushBackMod,
+}
+
+option BoxingGloveMod.KnockdownMod2
+{
+	type = double, min = 0.01, max = 100, default = 0.3,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_KnockdownMod,
+}
+
+option BoxingGloveMod.TreeDamage2
+{
+	type = double, min = 0.01, max = 100, default = 0,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_TreeDamage,
+}
+
+
+
+option BoxingGloveMod.BoxingGlove3Preset
+{
+	type = enum,
+	numValues = 5,
+	default = 1,
+
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_BoxingGlove3Preset,
+	valueTranslation = BoxingGloveMod_BoxingGlove3Preset,
+}
+
+option BoxingGloveMod.MinDamage3
+{
+	type = double, min = 0.01, max = 20, default = 0.55,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_MinDamage,
+}
+
+option BoxingGloveMod.MaxDamage3
+{
+	type = double, min = 0.01, max = 20, default = 0.75,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_MaxDamage,
+}
+
+option BoxingGloveMod.MinRange3
+{
+	type = double, min = 0.01, max = 1, default = 0.25,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_MinRange,
+}
+
+option BoxingGloveMod.MaxRange3
+{
+	type = double, min = 0.01, max = 2, default = 0.85,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_MaxRange,
+}
+
+option BoxingGloveMod.BaseSpeed3
+{
+	type = double, min = 0.01, max = 20, default = 1.3,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_BaseSpeed,
+}
+
+option BoxingGloveMod.CriticalChance3
+{
+	type = double, min = 0.01, max = 100, default = 20,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_CriticalChance,
+}
+
+option BoxingGloveMod.CritDmgMultiplier3
+{
+	type = double, min = 0.01, max = 10, default = 2,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_CritDmgMultiplier,
+}
+
+option BoxingGloveMod.MaxDurability3
+{
+	type = integer, min = 0, max = 100, default = 20,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_MaxDurability,
+}
+
+option BoxingGloveMod.DurabilityLossOneIn3
+{
+	type = integer, min = 0, max = 500, default = 20,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_DurabilityLossOneIn,
+}
+
+option BoxingGloveMod.PushBackMod3
+{
+	type = double, min = 0.01, max = 10, default = 0.5,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_PushBackMod,
+}
+
+option BoxingGloveMod.KnockdownMod3
+{
+	type = double, min = 0.01, max = 100, default = 0.3,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_KnockdownMod,
+}
+
+option BoxingGloveMod.TreeDamage3
+{
+	type = double, min = 0.01, max = 100, default = 0,
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_TreeDamage,
+}
