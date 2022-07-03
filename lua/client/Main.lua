@@ -79,7 +79,9 @@ function BoxingGloveMod:InitOptions()
         -- serialize category option
         Settings:Set("WEAPON3_DROPRATE", value);
         Settings:Serialize();
-        getCore():ResetLua(true, "modsChanged")
+        if not MainScreen.instance.inGame then
+            getCore():ResetLua(true, "modsChanged")
+        end
     end
     MainOptions.instance.gameOptions:add(dropRateComboOption3);
     addScrollHeight(dropRateComboBox3:getHeight());
