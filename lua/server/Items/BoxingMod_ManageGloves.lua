@@ -164,10 +164,7 @@ function updateInventoryItemsHelper(player, inv, item_name)
             equipped = i
             player:removeWornItem(weap)
         end
-        if player:isAttachedItem(weap) then
-            --print("attached: "..i)
-            --print(weap:getAttachmentType())
-            --print(weap:getAttachedSlotType())
+        if weap:getAttachedSlot() > -1 then
             attached = i
         end
         inv:Remove(weap)
@@ -184,7 +181,10 @@ function updateInventoryItemsHelper(player, inv, item_name)
             player:setPrimaryHandItem(weap)
         end
         if attached == i then
-            player:setAttachedItem(weap:getAttachedSlot(), weap)
+            player:setAttachedItem("Big Weapon On Back", weap);
+		    weap:setAttachedSlot(1);
+		    weap:setAttachedSlotType("Back");
+		    weap:setAttachedToModel("Big Weapon On Back");
         end
     end
 end
@@ -195,7 +195,7 @@ function updateInventoryItems()
 	    local inv = player:getInventory()
         if inv then
             updateInventoryItemsHelper(player, inv, "Base.BoxingGloveRed1")
-            updateInventoryItemsHelper(player, inv, "Base.BoxipresetngGloveRed2")
+            updateInventoryItemsHelper(player, inv, "Base.BoxingGloveRed2")
             updateInventoryItemsHelper(player, inv, "Base.BoxingGloveRed3")
             updateInventoryItemsHelper(player, inv, "Base.BoxingGloveBlue1")
             updateInventoryItemsHelper(player, inv, "Base.BoxingGloveBlue2")
@@ -204,14 +204,9 @@ function updateInventoryItems()
     end
 end
 
-function sandboxToSwingAnim(optionNum)
-    local map = {"Stab", "Bat", "Spear", "Heavy"}
-    return map[tonumber(optionNum)]
-end
 
 function ApplyWeaponSandboxSettings()
     ModifyWeaponAttribute("Base.BoxingGloveRed1", "Weight", SandboxVars.BoxingGloveMod.Weight)
-    ModifyWeaponAttribute("Base.BoxingGloveRed1", "SwingAnim", sandboxToSwingAnim(SandboxVars.BoxingGloveMod.SwingAnim1))
     ModifyWeaponAttribute("Base.BoxingGloveRed1", "MinDamage", SandboxVars.BoxingGloveMod.MinDamage1)
     if SandboxVars.BoxingGloveMod.MinDamage1 > SandboxVars.BoxingGloveMod.MaxDamage1 then
         ModifyWeaponAttribute("Base.BoxingGloveRed1", "MaxDamage", SandboxVars.BoxingGloveMod.MinDamage1)
@@ -235,7 +230,6 @@ function ApplyWeaponSandboxSettings()
 
 
     ModifyWeaponAttribute("Base.BoxingGloveRed2", "Weight", SandboxVars.BoxingGloveMod.Weight)
-    ModifyWeaponAttribute("Base.BoxingGloveRed2", "SwingAnim", sandboxToSwingAnim(SandboxVars.BoxingGloveMod.SwingAnim2))
     ModifyWeaponAttribute("Base.BoxingGloveRed2", "MinDamage", SandboxVars.BoxingGloveMod.MinDamage2)
     if SandboxVars.BoxingGloveMod.MinDamage2 > SandboxVars.BoxingGloveMod.MaxDamage2 then
         ModifyWeaponAttribute("Base.BoxingGloveRed2", "MaxDamage", SandboxVars.BoxingGloveMod.MinDamage2)
@@ -259,7 +253,6 @@ function ApplyWeaponSandboxSettings()
 
 
     ModifyWeaponAttribute("Base.BoxingGloveRed3", "Weight", SandboxVars.BoxingGloveMod.Weight)
-    ModifyWeaponAttribute("Base.BoxingGloveRed3", "SwingAnim", sandboxToSwingAnim(SandboxVars.BoxingGloveMod.SwingAnim3))
     ModifyWeaponAttribute("Base.BoxingGloveRed3", "MinDamage", SandboxVars.BoxingGloveMod.MinDamage3)
     if SandboxVars.BoxingGloveMod.MinDamage3 > SandboxVars.BoxingGloveMod.MaxDamage3 then
         ModifyWeaponAttribute("Base.BoxingGloveRed3", "MaxDamage", SandboxVars.BoxingGloveMod.MinDamage3)
@@ -286,7 +279,6 @@ function ApplyWeaponSandboxSettings()
 
 
     ModifyWeaponAttribute("Base.BoxingGloveBlue1", "Weight", SandboxVars.BoxingGloveMod.Weight)
-    ModifyWeaponAttribute("Base.BoxingGloveBlue1", "SwingAnim", sandboxToSwingAnim(SandboxVars.BoxingGloveMod.SwingAnim1))
     ModifyWeaponAttribute("Base.BoxingGloveBlue1", "MinDamage", SandboxVars.BoxingGloveMod.MinDamage1)
     if SandboxVars.BoxingGloveMod.MinDamage1 > SandboxVars.BoxingGloveMod.MaxDamage1 then
         ModifyWeaponAttribute("Base.BoxingGloveBlue1", "MaxDamage", SandboxVars.BoxingGloveMod.MinDamage1)
@@ -310,7 +302,6 @@ function ApplyWeaponSandboxSettings()
 
 
     ModifyWeaponAttribute("Base.BoxingGloveBlue2", "Weight", SandboxVars.BoxingGloveMod.Weight)
-    ModifyWeaponAttribute("Base.BoxingGloveBlue2", "SwingAnim", sandboxToSwingAnim(SandboxVars.BoxingGloveMod.SwingAnim2))
     ModifyWeaponAttribute("Base.BoxingGloveBlue2", "MinDamage", SandboxVars.BoxingGloveMod.MinDamage2)
     if SandboxVars.BoxingGloveMod.MinDamage2 > SandboxVars.BoxingGloveMod.MaxDamage2 then
         ModifyWeaponAttribute("Base.BoxingGloveBlue2", "MaxDamage", SandboxVars.BoxingGloveMod.MinDamage2)
@@ -334,7 +325,6 @@ function ApplyWeaponSandboxSettings()
 
 
     ModifyWeaponAttribute("Base.BoxingGloveBlue3", "Weight", SandboxVars.BoxingGloveMod.Weight)
-    ModifyWeaponAttribute("Base.BoxingGloveBlue3", "SwingAnim", sandboxToSwingAnim(SandboxVars.BoxingGloveMod.SwingAnim3))
     ModifyWeaponAttribute("Base.BoxingGloveBlue3", "MinDamage", SandboxVars.BoxingGloveMod.MinDamage3)
     if SandboxVars.BoxingGloveMod.MinDamage3 > SandboxVars.BoxingGloveMod.MaxDamage3 then
         ModifyWeaponAttribute("Base.BoxingGloveBlue3", "MaxDamage", SandboxVars.BoxingGloveMod.MinDamage3)
@@ -357,27 +347,69 @@ function ApplyWeaponSandboxSettings()
     ModifyWeaponAttribute("Base.BoxingGloveBlue3", "TreeDamage", SandboxVars.BoxingGloveMod.TreeDamage3)
 end
 
-function toggleSwingAnim()
-    local rand = ZombRand(2)
-    if rand == 1 then
-        ModifyWeaponAttribute("Base.BoxingGloveRed1", "SwingAnim", "Bat")
-    else
-        ModifyWeaponAttribute("Base.BoxingGloveRed1", "SwingAnim", "Stab")
+function ModifyEquippedWeaponAttribute(attribute_key, attribute_value)
+    local player = getPlayer()
+    if not player then
+        return
+    end
+    local inv = player:getInventory()
+    if not inv then
+        return
+    end
+    local prim = player:getPrimaryHandItem()
+    if not prim then
+        return
+    end
+    local item_name
+    local prim_name = prim:getName()
+    if prim_name == "BoxingGlove 1 (Red)" then
+        item_name = "Base.BoxingGloveRed1"
+    elseif prim_name == "BoxingGlove 2 (Red)" then
+        item_name = "Base.BoxingGloveRed2"
+    elseif prim_name == "BoxingGlove 3 (Red)" then
+        item_name = "Base.BoxingGloveRed3"
+    elseif prim_name == "BoxingGlove 1 (Blue)" then
+        item_name = "Base.BoxingGloveBlue1"
+    elseif prim_name == "BoxingGlove 2 (Blue)" then
+        item_name = "Base.BoxingGloveBlue2"
+    elseif prim_name == "BoxingGlove 3 (Blue)" then
+        item_name = "Base.BoxingGloveBlue3"
+    end
+    if not item_name then
+        return
+    end
+    ModifyWeaponAttribute(item_name, attribute_key, attribute_value)
+
+    local attached = false
+    local condition = prim:getCondition()
+    local repair = prim:getHaveBeenRepaired()
+    player:removeWornItem(prim)
+    if prim:getAttachedSlot() > -1 then
+        attached = true
+    end
+    inv:Remove(prim)
+    new_weap = inv:AddItem(item_name)
+    player:setPrimaryHandItem(new_weap)
+    if attached then
+        player:setAttachedItem("Big Weapon On Back", new_weap);
+        new_weap:setAttachedSlot(1);
+        new_weap:setAttachedSlotType("Back");
+        new_weap:setAttachedToModel("Big Weapon On Back");
     end
 end
 
-function testSwingChange()
-    toggleSwingAnim()
-    updateInventoryItems()
-    --[[local chr = getPlayer()
-    for i=0,chr:getAttachedItems():getGroup():size()-1 do
-        print("start")
-        print(chr:getAttachedItems())
-        print(chr:getAttachedItems():getGroup())
-        print(chr:getAttachedItems():getGroup():getLocationByIndex(i))
-		print(chr:getAttachedItems():getGroup():getLocationByIndex(i):getId())
-        print("end")
-	end--]]
+local prev = 5
+function toggleSwingAnim()
+    local rand = ZombRand(2)
+    if rand == prev then
+        return
+    end
+    prev = rand
+    if rand == 1 then
+        ModifyEquippedWeaponAttribute("SwingAnim", "Bat")
+    else
+        ModifyEquippedWeaponAttribute("SwingAnim", "Stab")
+    end
 end
 
 Events.OnEquipPrimary.Add(ManageGlovesRed)
@@ -390,7 +422,7 @@ Events.OnGameStart.Add(updateInventoryItems)
 --Events.OnMainMenuEnter.Add(ApplyDropRates)
 --Events.OnLoad.Add(ApplyDropRates)
 --Events.OnResetLua.Add(ApplyDropRates)
-Events.OnPlayerAttackFinished.Add(testSwingChange)
+Events.OnPlayerAttackFinished.Add(toggleSwingAnim)
 
 --Events.OnWeaponSwingHitPoint.Add()
 --Events.OnPlayerAttackFinished.Add

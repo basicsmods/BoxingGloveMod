@@ -1,8 +1,8 @@
 UI_EN = {
     UI_optionscreen_binding_BoxingGloveMod = "BoxingGlove",
 
-    UI_Droprate = "BoxingGlove 1 Drop Rate",
-    UI_Droprate2 = "BoxingGlove 2 Drop Rate",
-    UI_Droprate3 = "BoxingGlove 3 Drop Rate",
+    UI_Droprate = "BoxingGlove 1 Drop Rate (Default: 3)",
+    UI_Droprate2 = "BoxingGlove 2 Drop Rate (Default: 0.75)",
+    UI_Droprate3 = "BoxingGlove 3 Drop Rate (Default: 0.1)",
 
 }

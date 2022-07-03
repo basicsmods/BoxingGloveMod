@@ -18,17 +18,6 @@ option BoxingGloveMod.BoxingGlove1Preset
 	valueTranslation = BoxingGloveMod_BoxingGlove1Preset,
 }
 
-option BoxingGloveMod.SwingAnim1
-{
-    type = enum,
-	numValues = 4,
-	default = 1,
-
-	page = BoxingGloveMod,
-	translation = BoxingGloveMod_BoxingGloveSwingAnim,
-	valueTranslation = BoxingGloveMod_BoxingGloveSwingAnim,
-}
-
 option BoxingGloveMod.MinDamage1
 {
 	type = double, min = 0.01, max = 20, default = 0.25,
@@ -126,16 +115,6 @@ option BoxingGloveMod.BoxingGlove2Preset
 	valueTranslation = BoxingGloveMod_BoxingGlove2Preset,
 }
 
-option BoxingGloveMod.SwingAnim2
-{
-    type = enum,
-	numValues = 4,
-	default = 1,
-
-	page = BoxingGloveMod,
-	translation = BoxingGloveMod_BoxingGlove2SwingAnim,
-	valueTranslation = BoxingGloveMod_BoxingGlove2SwingAnim,
-}
 
 option BoxingGloveMod.MinDamage2
 {
@@ -232,17 +211,6 @@ option BoxingGloveMod.BoxingGlove3Preset
 	page = BoxingGloveMod,
 	translation = BoxingGloveMod_BoxingGlove3Preset,
 	valueTranslation = BoxingGloveMod_BoxingGlove3Preset,
-}
-
-option BoxingGloveMod.SwingAnim3
-{
-    type = enum,
-	numValues = 4,
-	default = 1,
-
-	page = BoxingGloveMod,
-	translation = BoxingGloveMod_BoxingGlove3SwingAnim,
-	valueTranslation = BoxingGloveMod_BoxingGlove3SwingAnim,
 }
 
 option BoxingGloveMod.MinDamage3
