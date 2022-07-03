@@ -1,4 +1,4 @@
---[[function BoxingGloveMod:InitOptions()
+function BoxingGloveMod:InitOptions()
     local Settings = BoxingGloveMod.Settings;
 
     -- load settings

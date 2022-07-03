@@ -1,4 +1,4 @@
---[[
+
 BoxingGloveMod.Settings = BoxingGloveMod.Settings or {}
 
 function ManageGlovesRed()
@@ -228,7 +228,7 @@ function updateInventoryItemsHelper(player, inv, item_name)
         if equipped == i then
             player:setPrimaryHandItem(weap)
         end
-        if attached = i then
+        if attached == i then
             player:setAttachedItem(weap:getAttachedSlotType(), weap)
         end
     end
@@ -240,7 +240,7 @@ function updateInventoryItems()
 	    local inv = player:getInventory()
         if inv then
             updateInventoryItemsHelper(player, inv, "Base.BoxingGloveRed1")
-            updateInventoryItemsHelper(player, inv, "Base.BoxingGloveRed2")
+            updateInventoryItemsHelper(player, inv, "Base.BoxipresetngGloveRed2")
             updateInventoryItemsHelper(player, inv, "Base.BoxingGloveRed3")
             updateInventoryItemsHelper(player, inv, "Base.BoxingGloveBlue1")
             updateInventoryItemsHelper(player, inv, "Base.BoxingGloveBlue2")
@@ -251,24 +251,43 @@ end
 
 function ApplyWeaponSandboxSettings()
     ModifyWeaponAttribute("Base.BoxingGloveRed1", "Weight", SandboxVars.BoxingGloveMod.Weight)
-    ModifyWeaponAttribute("Base.BoxingGloveRed1", "MinDamage", SandboxVars.BoxingGloveMod.MinDamage$)
-    ModifyWeaponAttribute("Base.BoxingGloveRed1", "MaxDamage", SandboxVars.BoxingGloveMod.MaxDamage$)
-    ModifyWeaponAttribute("Base.BoxingGloveRed1", "MinRange", SandboxVars.BoxingGloveMod.MinRange$)
-    ModifyWeaponAttribute("Base.BoxingGloveRed1", "MaxRange", SandboxVars.BoxingGloveMod.MaxRange$)
-    ModifyWeaponAttribute("Base.BoxingGloveRed1", "BaseSpeed", SandboxVars.BoxingGloveMod.BaseSpeed$)
-    ModifyWeaponAttribute("Base.BoxingGloveRed1", "CriticalChance", SandboxVars.BoxingGloveMod.CriticalChance$)
-    ModifyWeaponAttribute("Base.BoxingGloveRed1", "CritDmgMultiplier", SandboxVars.BoxingGloveMod.CritDmgMultiplier$)
-    ModifyWeaponAttribute("Base.BoxingGloveRed1", "ConditionMax", SandboxVars.BoxingGloveMod.MaxDurability$)
-    ModifyWeaponAttribute("Base.BoxingGloveRed1", "ConditionLowerChanceOneIn", SandboxVars.BoxingGloveMod.DurabilityLossOneIn$)
-    ModifyWeaponAttribute("Base.BoxingGloveRed1", "PushBackMod", SandboxVars.BoxingGloveMod.PushBackMod$)
-    ModifyWeaponAttribute("Base.BoxingGloveRed1", "KnockdownMod", SandboxVars.BoxingGloveMod.KnockdownMod$)
-    ModifyWeaponAttribute("Base.BoxingGloveRed1", "TreeDamage", SandboxVars.BoxingGloveMod.TreeDamage$)
+    ModifyWeaponAttribute("Base.BoxingGloveRed1", "SwingAnim", SandboxVars.BoxingGloveMod.SwingAnim1)
+    ModifyWeaponAttribute("Base.BoxingGloveRed1", "MinDamage", SandboxVars.BoxingGloveMod.MinDamage1)
+    if SandboxVars.BoxingGloveMod.MinDamage1 > SandboxVars.BoxingGloveMod.MaxDamage1 then
+        ModifyWeaponAttribute("Base.BoxingGloveRed1", "MaxDamage", SandboxVars.BoxingGloveMod.MinDamage1)
+    else
+        ModifyWeaponAttribute("Base.BoxingGloveRed1", "MaxDamage", SandboxVars.BoxingGloveMod.MaxDamage1)
+    end
+    ModifyWeaponAttribute("Base.BoxingGloveRed1", "MinRange", SandboxVars.BoxingGloveMod.MinRange1)
+    if SandboxVars.BoxingGloveMod.MinRange1 > SandboxVars.BoxingGloveMod.MaxRange1 then
+        ModifyWeaponAttribute("Base.BoxingGloveRed1", "MaxRange", SandboxVars.BoxingGloveMod.MinRange1)
+    else
+        ModifyWeaponAttribute("Base.BoxingGloveRed1", "MaxRange", SandboxVars.BoxingGloveMod.MaxRange1)
+    end
+    ModifyWeaponAttribute("Base.BoxingGloveRed1", "BaseSpeed", SandboxVars.BoxingGloveMod.BaseSpeed1)
+    ModifyWeaponAttribute("Base.BoxingGloveRed1", "CriticalChance", SandboxVars.BoxingGloveMod.CriticalChance1)
+    ModifyWeaponAttribute("Base.BoxingGloveRed1", "CritDmgMultiplier", SandboxVars.BoxingGloveMod.CritDmgMultiplier1)
+    ModifyWeaponAttribute("Base.BoxingGloveRed1", "ConditionMax", SandboxVars.BoxingGloveMod.MaxDurability1)
+    ModifyWeaponAttribute("Base.BoxingGloveRed1", "ConditionLowerChanceOneIn", SandboxVars.BoxingGloveMod.DurabilityLossOneIn1)
+    ModifyWeaponAttribute("Base.BoxingGloveRed1", "PushBackMod", SandboxVars.BoxingGloveMod.PushBackMod1)
+    ModifyWeaponAttribute("Base.BoxingGloveRed1", "KnockdownMod", SandboxVars.BoxingGloveMod.KnockdownMod1)
+    ModifyWeaponAttribute("Base.BoxingGloveRed1", "TreeDamage", SandboxVars.BoxingGloveMod.TreeDamage1)
+
 
     ModifyWeaponAttribute("Base.BoxingGloveRed2", "Weight", SandboxVars.BoxingGloveMod.Weight)
+    ModifyWeaponAttribute("Base.BoxingGloveRed2", "SwingAnim", SandboxVars.BoxingGloveMod.SwingAnim2)
     ModifyWeaponAttribute("Base.BoxingGloveRed2", "MinDamage", SandboxVars.BoxingGloveMod.MinDamage2)
-    ModifyWeaponAttribute("Base.BoxingGloveRed2", "MaxDamage", SandboxVars.BoxingGloveMod.MaxDamage2)
+    if SandboxVars.BoxingGloveMod.MinDamage2 > SandboxVars.BoxingGloveMod.MaxDamage2 then
+        ModifyWeaponAttribute("Base.BoxingGloveRed2", "MaxDamage", SandboxVars.BoxingGloveMod.MinDamage2)
+    else
+        ModifyWeaponAttribute("Base.BoxingGloveRed2", "MaxDamage", SandboxVars.BoxingGloveMod.MaxDamage2)
+    end
     ModifyWeaponAttribute("Base.BoxingGloveRed2", "MinRange", SandboxVars.BoxingGloveMod.MinRange2)
-    ModifyWeaponAttribute("Base.BoxingGloveRed2", "MaxRange", SandboxVars.BoxingGloveMod.MaxRange2)
+    if SandboxVars.BoxingGloveMod.MinRange2 > SandboxVars.BoxingGloveMod.MaxRange2 then
+        ModifyWeaponAttribute("Base.BoxingGloveRed2", "MaxRange", SandboxVars.BoxingGloveMod.MinRange2)
+    else
+        ModifyWeaponAttribute("Base.BoxingGloveRed2", "MaxRange", SandboxVars.BoxingGloveMod.MaxRange2)
+    end
     ModifyWeaponAttribute("Base.BoxingGloveRed2", "BaseSpeed", SandboxVars.BoxingGloveMod.BaseSpeed2)
     ModifyWeaponAttribute("Base.BoxingGloveRed2", "CriticalChance", SandboxVars.BoxingGloveMod.CriticalChance2)
     ModifyWeaponAttribute("Base.BoxingGloveRed2", "CritDmgMultiplier", SandboxVars.BoxingGloveMod.CritDmgMultiplier2)
@@ -278,11 +297,21 @@ function ApplyWeaponSandboxSettings()
     ModifyWeaponAttribute("Base.BoxingGloveRed2", "KnockdownMod", SandboxVars.BoxingGloveMod.KnockdownMod2)
     ModifyWeaponAttribute("Base.BoxingGloveRed2", "TreeDamage", SandboxVars.BoxingGloveMod.TreeDamage2)
 
+
     ModifyWeaponAttribute("Base.BoxingGloveRed3", "Weight", SandboxVars.BoxingGloveMod.Weight)
+    ModifyWeaponAttribute("Base.BoxingGloveRed3", "SwingAnim", SandboxVars.BoxingGloveMod.SwingAnim3)
     ModifyWeaponAttribute("Base.BoxingGloveRed3", "MinDamage", SandboxVars.BoxingGloveMod.MinDamage3)
-    ModifyWeaponAttribute("Base.BoxingGloveRed3", "MaxDamage", SandboxVars.BoxingGloveMod.MaxDamage3)
+    if SandboxVars.BoxingGloveMod.MinDamage3 > SandboxVars.BoxingGloveMod.MaxDamage3 then
+        ModifyWeaponAttribute("Base.BoxingGloveRed3", "MaxDamage", SandboxVars.BoxingGloveMod.MinDamage3)
+    else
+        ModifyWeaponAttribute("Base.BoxingGloveRed3", "MaxDamage", SandboxVars.BoxingGloveMod.MaxDamage3)
+    end
     ModifyWeaponAttribute("Base.BoxingGloveRed3", "MinRange", SandboxVars.BoxingGloveMod.MinRange3)
-    ModifyWeaponAttribute("Base.BoxingGloveRed3", "MaxRange", SandboxVars.BoxingGloveMod.MaxRange3)
+    if SandboxVars.BoxingGloveMod.MinRange3 > SandboxVars.BoxingGloveMod.MaxRange3 then
+        ModifyWeaponAttribute("Base.BoxingGloveRed3", "MaxRange", SandboxVars.BoxingGloveMod.MinRange3)
+    else
+        ModifyWeaponAttribute("Base.BoxingGloveRed3", "MaxRange", SandboxVars.BoxingGloveMod.MaxRange3)
+    end
     ModifyWeaponAttribute("Base.BoxingGloveRed3", "BaseSpeed", SandboxVars.BoxingGloveMod.BaseSpeed3)
     ModifyWeaponAttribute("Base.BoxingGloveRed3", "CriticalChance", SandboxVars.BoxingGloveMod.CriticalChance3)
     ModifyWeaponAttribute("Base.BoxingGloveRed3", "CritDmgMultiplier", SandboxVars.BoxingGloveMod.CritDmgMultiplier3)
@@ -291,6 +320,81 @@ function ApplyWeaponSandboxSettings()
     ModifyWeaponAttribute("Base.BoxingGloveRed3", "PushBackMod", SandboxVars.BoxingGloveMod.PushBackMod3)
     ModifyWeaponAttribute("Base.BoxingGloveRed3", "KnockdownMod", SandboxVars.BoxingGloveMod.KnockdownMod3)
     ModifyWeaponAttribute("Base.BoxingGloveRed3", "TreeDamage", SandboxVars.BoxingGloveMod.TreeDamage3)
+
+
+
+
+
+    ModifyWeaponAttribute("Base.BoxingGloveBlue1", "Weight", SandboxVars.BoxingGloveMod.Weight)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue1", "SwingAnim", SandboxVars.BoxingGloveMod.SwingAnim1)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue1", "MinDamage", SandboxVars.BoxingGloveMod.MinDamage1)
+    if SandboxVars.BoxingGloveMod.MinDamage1 > SandboxVars.BoxingGloveMod.MaxDamage1 then
+        ModifyWeaponAttribute("Base.BoxingGloveBlue1", "MaxDamage", SandboxVars.BoxingGloveMod.MinDamage1)
+    else
+        ModifyWeaponAttribute("Base.BoxingGloveBlue1", "MaxDamage", SandboxVars.BoxingGloveMod.MaxDamage1)
+    end
+    ModifyWeaponAttribute("Base.BoxingGloveBlue1", "MinRange", SandboxVars.BoxingGloveMod.MinRange1)
+    if SandboxVars.BoxingGloveMod.MinRange1 > SandboxVars.BoxingGloveMod.MaxRange1 then
+        ModifyWeaponAttribute("Base.BoxingGloveBlue1", "MaxRange", SandboxVars.BoxingGloveMod.MinRange1)
+    else
+        ModifyWeaponAttribute("Base.BoxingGloveBlue1", "MaxRange", SandboxVars.BoxingGloveMod.MaxRange1)
+    end
+    ModifyWeaponAttribute("Base.BoxingGloveBlue1", "BaseSpeed", SandboxVars.BoxingGloveMod.BaseSpeed1)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue1", "CriticalChance", SandboxVars.BoxingGloveMod.CriticalChance1)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue1", "CritDmgMultiplier", SandboxVars.BoxingGloveMod.CritDmgMultiplier1)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue1", "ConditionMax", SandboxVars.BoxingGloveMod.MaxDurability1)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue1", "ConditionLowerChanceOneIn", SandboxVars.BoxingGloveMod.DurabilityLossOneIn1)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue1", "PushBackMod", SandboxVars.BoxingGloveMod.PushBackMod1)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue1", "KnockdownMod", SandboxVars.BoxingGloveMod.KnockdownMod1)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue1", "TreeDamage", SandboxVars.BoxingGloveMod.TreeDamage1)
+
+
+    ModifyWeaponAttribute("Base.BoxingGloveBlue2", "Weight", SandboxVars.BoxingGloveMod.Weight)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue2", "SwingAnim", SandboxVars.BoxingGloveMod.SwingAnim2)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue2", "MinDamage", SandboxVars.BoxingGloveMod.MinDamage2)
+    if SandboxVars.BoxingGloveMod.MinDamage2 > SandboxVars.BoxingGloveMod.MaxDamage2 then
+        ModifyWeaponAttribute("Base.BoxingGloveBlue2", "MaxDamage", SandboxVars.BoxingGloveMod.MinDamage2)
+    else
+        ModifyWeaponAttribute("Base.BoxingGloveBlue2", "MaxDamage", SandboxVars.BoxingGloveMod.MaxDamage2)
+    end
+    ModifyWeaponAttribute("Base.BoxingGloveBlue2", "MinRange", SandboxVars.BoxingGloveMod.MinRange2)
+    if SandboxVars.BoxingGloveMod.MinRange2 > SandboxVars.BoxingGloveMod.MaxRange2 then
+        ModifyWeaponAttribute("Base.BoxingGloveBlue2", "MaxRange", SandboxVars.BoxingGloveMod.MinRange2)
+    else
+        ModifyWeaponAttribute("Base.BoxingGloveBlue2", "MaxRange", SandboxVars.BoxingGloveMod.MaxRange2)
+    end
+    ModifyWeaponAttribute("Base.BoxingGloveBlue2", "BaseSpeed", SandboxVars.BoxingGloveMod.BaseSpeed2)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue2", "CriticalChance", SandboxVars.BoxingGloveMod.CriticalChance2)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue2", "CritDmgMultiplier", SandboxVars.BoxingGloveMod.CritDmgMultiplier2)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue2", "ConditionMax", SandboxVars.BoxingGloveMod.MaxDurability2)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue2", "ConditionLowerChanceOneIn", SandboxVars.BoxingGloveMod.DurabilityLossOneIn2)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue2", "PushBackMod", SandboxVars.BoxingGloveMod.PushBackMod2)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue2", "KnockdownMod", SandboxVars.BoxingGloveMod.KnockdownMod2)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue2", "TreeDamage", SandboxVars.BoxingGloveMod.TreeDamage2)
+
+
+    ModifyWeaponAttribute("Base.BoxingGloveBlue3", "Weight", SandboxVars.BoxingGloveMod.Weight)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue3", "SwingAnim", SandboxVars.BoxingGloveMod.SwingAnim3)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue3", "MinDamage", SandboxVars.BoxingGloveMod.MinDamage3)
+    if SandboxVars.BoxingGloveMod.MinDamage3 > SandboxVars.BoxingGloveMod.MaxDamage3 then
+        ModifyWeaponAttribute("Base.BoxingGloveBlue3", "MaxDamage", SandboxVars.BoxingGloveMod.MinDamage3)
+    else
+        ModifyWeaponAttribute("Base.BoxingGloveBlue3", "MaxDamage", SandboxVars.BoxingGloveMod.MaxDamage3)
+    end
+    ModifyWeaponAttribute("Base.BoxingGloveBlue3", "MinRange", SandboxVars.BoxingGloveMod.MinRange3)
+    if SandboxVars.BoxingGloveMod.MinRange3 > SandboxVars.BoxingGloveMod.MaxRange3 then
+        ModifyWeaponAttribute("Base.BoxingGloveBlue3", "MaxRange", SandboxVars.BoxingGloveMod.MinRange3)
+    else
+        ModifyWeaponAttribute("Base.BoxingGloveBlue3", "MaxRange", SandboxVars.BoxingGloveMod.MaxRange3)
+    end
+    ModifyWeaponAttribute("Base.BoxingGloveBlue3", "BaseSpeed", SandboxVars.BoxingGloveMod.BaseSpeed3)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue3", "CriticalChance", SandboxVars.BoxingGloveMod.CriticalChance3)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue3", "CritDmgMultiplier", SandboxVars.BoxingGloveMod.CritDmgMultiplier3)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue3", "ConditionMax", SandboxVars.BoxingGloveMod.MaxDurability3)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue3", "ConditionLowerChanceOneIn", SandboxVars.BoxingGloveMod.DurabilityLossOneIn3)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue3", "PushBackMod", SandboxVars.BoxingGloveMod.PushBackMod3)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue3", "KnockdownMod", SandboxVars.BoxingGloveMod.KnockdownMod3)
+    ModifyWeaponAttribute("Base.BoxingGloveBlue3", "TreeDamage", SandboxVars.BoxingGloveMod.TreeDamage3)
 end
 
 Events.OnEquipPrimary.Add(ManageGlovesRed)

@@ -14,6 +14,27 @@ Sandbox_EN = {
     Sandbox_BoxingGloveMod_KnockdownMod = "Knockdown Mod",
     Sandbox_BoxingGloveMod_TreeDamage = "Tree Damage",
 
+    Sandbox_BoxingGloveMod_BoxingGloveSwingAnim = "Swing Animation",
+    Sandbox_BoxingGloveMod_BoxingGloveSwingAnim_tooltip = "Swing animation for BoxingGlove 1.",
+    Sandbox_BoxingGloveMod_BoxingGloveSwingAnim_option1 = "Stab",
+    Sandbox_BoxingGloveMod_BoxingGloveSwingAnim_option2 = "Bat",
+    Sandbox_BoxingGloveMod_BoxingGloveSwingAnim_option3 = "Spear",
+    Sandbox_BoxingGloveMod_BoxingGloveSwingAnim_option4 = "Heavy",
+
+    Sandbox_BoxingGloveMod_BoxingGlove2SwingAnim = "Swing Animation",
+    Sandbox_BoxingGloveMod_BoxingGlove2SwingAnim_tooltip = "Swing animation for BoxingGlove 2.",
+    Sandbox_BoxingGloveMod_BoxingGlove2SwingAnim_option1 = "Stab",
+    Sandbox_BoxingGloveMod_BoxingGlove2SwingAnim_option2 = "Bat",
+    Sandbox_BoxingGloveMod_BoxingGlove2SwingAnim_option3 = "Spear",
+    Sandbox_BoxingGloveMod_BoxingGlove2SwingAnim_option4 = "Heavy",
+
+    Sandbox_BoxingGloveMod_BoxingGlove3SwingAnim = "Swing Animation",
+    Sandbox_BoxingGloveMod_BoxingGlove3SwingAnim_tooltip = "Swing animation for BoxingGlove 3.",
+    Sandbox_BoxingGloveMod_BoxingGlove3SwingAnim_option1 = "Stab",
+    Sandbox_BoxingGloveMod_BoxingGlove3SwingAnim_option2 = "Bat",
+    Sandbox_BoxingGloveMod_BoxingGlove3SwingAnim_option3 = "Spear",
+    Sandbox_BoxingGloveMod_BoxingGlove3SwingAnim_option4 = "Heavy",
+
     Sandbox_BoxingGloveMod_BoxingGlove1Preset = "BoxingGlove 1 Preset",
 	Sandbox_BoxingGloveMod_BoxingGlove1Preset_tooltip = "Preset stats for BoxingGlove 1",
 	Sandbox_BoxingGloveMod_BoxingGlove1Preset_option1 = "Custom",

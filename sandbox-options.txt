@@ -1,12 +1,5 @@
 VERSION = 1,
 
-option BoxingGloveMod.EveryoneIsBoxingGloveMod
-{
-	type = boolean, default = false,
-	page = BoxingGloveMod,
-	translation = BoxingGloveMod,
-}
-
 option BoxingGloveMod.Weight
 {
 	type = double, min = 0.01, max = 5, default = 0.5,
@@ -23,6 +16,17 @@ option BoxingGloveMod.BoxingGlove1Preset
 	page = BoxingGloveMod,
 	translation = BoxingGloveMod_BoxingGlove1Preset,
 	valueTranslation = BoxingGloveMod_BoxingGlove1Preset,
+}
+
+option BoxingGloveMod.SwingAnim1
+{
+    type = enum,
+	numValues = 4,
+	default = 1,
+
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_BoxingGloveSwingAnim,
+	valueTranslation = BoxingGloveMod_BoxingGloveSwingAnim,
 }
 
 option BoxingGloveMod.MinDamage1
@@ -104,7 +108,7 @@ option BoxingGloveMod.KnockdownMod1
 
 option BoxingGloveMod.TreeDamage1
 {
-	type = double, min = 0.01, max = 100, default = 0,
+	type = double, min = 0.00, max = 100, default = 0,
 	page = BoxingGloveMod,
 	translation = BoxingGloveMod_TreeDamage,
 }
@@ -120,6 +124,17 @@ option BoxingGloveMod.BoxingGlove2Preset
 	page = BoxingGloveMod,
 	translation = BoxingGloveMod_BoxingGlove2Preset,
 	valueTranslation = BoxingGloveMod_BoxingGlove2Preset,
+}
+
+option BoxingGloveMod.SwingAnim2
+{
+    type = enum,
+	numValues = 4,
+	default = 1,
+
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_BoxingGlove2SwingAnim,
+	valueTranslation = BoxingGloveMod_BoxingGlove2SwingAnim,
 }
 
 option BoxingGloveMod.MinDamage2
@@ -201,7 +216,7 @@ option BoxingGloveMod.KnockdownMod2
 
 option BoxingGloveMod.TreeDamage2
 {
-	type = double, min = 0.01, max = 100, default = 0,
+	type = double, min = 0.00, max = 100, default = 0,
 	page = BoxingGloveMod,
 	translation = BoxingGloveMod_TreeDamage,
 }
@@ -217,6 +232,17 @@ option BoxingGloveMod.BoxingGlove3Preset
 	page = BoxingGloveMod,
 	translation = BoxingGloveMod_BoxingGlove3Preset,
 	valueTranslation = BoxingGloveMod_BoxingGlove3Preset,
+}
+
+option BoxingGloveMod.SwingAnim3
+{
+    type = enum,
+	numValues = 4,
+	default = 1,
+
+	page = BoxingGloveMod,
+	translation = BoxingGloveMod_BoxingGlove3SwingAnim,
+	valueTranslation = BoxingGloveMod_BoxingGlove3SwingAnim,
 }
 
 option BoxingGloveMod.MinDamage3
@@ -298,7 +324,7 @@ option BoxingGloveMod.KnockdownMod3
 
 option BoxingGloveMod.TreeDamage3
 {
-	type = double, min = 0.01, max = 100, default = 0,
+	type = double, min = 0.00, max = 100, default = 0,
 	page = BoxingGloveMod,
 	translation = BoxingGloveMod_TreeDamage,
 }
