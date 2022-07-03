@@ -9,4 +9,8 @@ Things I'd like to add:
 - Change the animation to be a punch instead of the knife stab. (Don't think this one is possible for now.)
 - Make it so the weapon has a random chance to change its swinganim with each swing.
 - Add stars to the icons.
+- Add a hotkey that toggles (or two hotkeys for choosing specifically) a jab punch (stab animation) vs swing punch (bat animation). Give the weapon different stats based on the active swingAnim (jab faster, but no knock and more push?)
+
+
+(Unrelated to this mod)
 - Add hotkey to cycle through containers without needing to mouse over the window.
