@@ -224,8 +224,6 @@ function ApplyWeaponSandboxSettings()
     ModifyWeaponAttribute("Base.BoxingGloveRed1", "CritDmgMultiplier", SandboxVars.BoxingGloveMod.CritDmgMultiplier1)
     ModifyWeaponAttribute("Base.BoxingGloveRed1", "ConditionMax", SandboxVars.BoxingGloveMod.MaxDurability1)
     ModifyWeaponAttribute("Base.BoxingGloveRed1", "ConditionLowerChanceOneIn", SandboxVars.BoxingGloveMod.DurabilityLossOneIn1)
-    ModifyWeaponAttribute("Base.BoxingGloveRed1", "PushBackMod", SandboxVars.BoxingGloveMod.PushBackMod1)
-    ModifyWeaponAttribute("Base.BoxingGloveRed1", "KnockdownMod", SandboxVars.BoxingGloveMod.KnockdownMod1)
     ModifyWeaponAttribute("Base.BoxingGloveRed1", "TreeDamage", SandboxVars.BoxingGloveMod.TreeDamage1)
 
 
@@ -247,8 +245,6 @@ function ApplyWeaponSandboxSettings()
     ModifyWeaponAttribute("Base.BoxingGloveRed2", "CritDmgMultiplier", SandboxVars.BoxingGloveMod.CritDmgMultiplier2)
     ModifyWeaponAttribute("Base.BoxingGloveRed2", "ConditionMax", SandboxVars.BoxingGloveMod.MaxDurability2)
     ModifyWeaponAttribute("Base.BoxingGloveRed2", "ConditionLowerChanceOneIn", SandboxVars.BoxingGloveMod.DurabilityLossOneIn2)
-    ModifyWeaponAttribute("Base.BoxingGloveRed2", "PushBackMod", SandboxVars.BoxingGloveMod.PushBackMod2)
-    ModifyWeaponAttribute("Base.BoxingGloveRed2", "KnockdownMod", SandboxVars.BoxingGloveMod.KnockdownMod2)
     ModifyWeaponAttribute("Base.BoxingGloveRed2", "TreeDamage", SandboxVars.BoxingGloveMod.TreeDamage2)
 
 
@@ -270,8 +266,6 @@ function ApplyWeaponSandboxSettings()
     ModifyWeaponAttribute("Base.BoxingGloveRed3", "CritDmgMultiplier", SandboxVars.BoxingGloveMod.CritDmgMultiplier3)
     ModifyWeaponAttribute("Base.BoxingGloveRed3", "ConditionMax", SandboxVars.BoxingGloveMod.MaxDurability3)
     ModifyWeaponAttribute("Base.BoxingGloveRed3", "ConditionLowerChanceOneIn", SandboxVars.BoxingGloveMod.DurabilityLossOneIn3)
-    ModifyWeaponAttribute("Base.BoxingGloveRed3", "PushBackMod", SandboxVars.BoxingGloveMod.PushBackMod3)
-    ModifyWeaponAttribute("Base.BoxingGloveRed3", "KnockdownMod", SandboxVars.BoxingGloveMod.KnockdownMod3)
     ModifyWeaponAttribute("Base.BoxingGloveRed3", "TreeDamage", SandboxVars.BoxingGloveMod.TreeDamage3)
 
 
@@ -296,8 +290,6 @@ function ApplyWeaponSandboxSettings()
     ModifyWeaponAttribute("Base.BoxingGloveBlue1", "CritDmgMultiplier", SandboxVars.BoxingGloveMod.CritDmgMultiplier1)
     ModifyWeaponAttribute("Base.BoxingGloveBlue1", "ConditionMax", SandboxVars.BoxingGloveMod.MaxDurability1)
     ModifyWeaponAttribute("Base.BoxingGloveBlue1", "ConditionLowerChanceOneIn", SandboxVars.BoxingGloveMod.DurabilityLossOneIn1)
-    ModifyWeaponAttribute("Base.BoxingGloveBlue1", "PushBackMod", SandboxVars.BoxingGloveMod.PushBackMod1)
-    ModifyWeaponAttribute("Base.BoxingGloveBlue1", "KnockdownMod", SandboxVars.BoxingGloveMod.KnockdownMod1)
     ModifyWeaponAttribute("Base.BoxingGloveBlue1", "TreeDamage", SandboxVars.BoxingGloveMod.TreeDamage1)
 
 
@@ -319,8 +311,6 @@ function ApplyWeaponSandboxSettings()
     ModifyWeaponAttribute("Base.BoxingGloveBlue2", "CritDmgMultiplier", SandboxVars.BoxingGloveMod.CritDmgMultiplier2)
     ModifyWeaponAttribute("Base.BoxingGloveBlue2", "ConditionMax", SandboxVars.BoxingGloveMod.MaxDurability2)
     ModifyWeaponAttribute("Base.BoxingGloveBlue2", "ConditionLowerChanceOneIn", SandboxVars.BoxingGloveMod.DurabilityLossOneIn2)
-    ModifyWeaponAttribute("Base.BoxingGloveBlue2", "PushBackMod", SandboxVars.BoxingGloveMod.PushBackMod2)
-    ModifyWeaponAttribute("Base.BoxingGloveBlue2", "KnockdownMod", SandboxVars.BoxingGloveMod.KnockdownMod2)
     ModifyWeaponAttribute("Base.BoxingGloveBlue2", "TreeDamage", SandboxVars.BoxingGloveMod.TreeDamage2)
 
 
@@ -342,12 +332,10 @@ function ApplyWeaponSandboxSettings()
     ModifyWeaponAttribute("Base.BoxingGloveBlue3", "CritDmgMultiplier", SandboxVars.BoxingGloveMod.CritDmgMultiplier3)
     ModifyWeaponAttribute("Base.BoxingGloveBlue3", "ConditionMax", SandboxVars.BoxingGloveMod.MaxDurability3)
     ModifyWeaponAttribute("Base.BoxingGloveBlue3", "ConditionLowerChanceOneIn", SandboxVars.BoxingGloveMod.DurabilityLossOneIn3)
-    ModifyWeaponAttribute("Base.BoxingGloveBlue3", "PushBackMod", SandboxVars.BoxingGloveMod.PushBackMod3)
-    ModifyWeaponAttribute("Base.BoxingGloveBlue3", "KnockdownMod", SandboxVars.BoxingGloveMod.KnockdownMod3)
     ModifyWeaponAttribute("Base.BoxingGloveBlue3", "TreeDamage", SandboxVars.BoxingGloveMod.TreeDamage3)
 end
 
-function ModifyEquippedWeaponAttribute(attribute_key, attribute_value)
+function ModifyEquippedWeaponAttribute(attribute_key, attribute_value, canKnock)
     local player = getPlayer()
     if not player then
         return
@@ -361,19 +349,26 @@ function ModifyEquippedWeaponAttribute(attribute_key, attribute_value)
         return
     end
     local item_name
+    local knockChance
     local prim_name = prim:getName()
     if prim_name == "BoxingGlove 1 (Red)" then
         item_name = "Base.BoxingGloveRed1"
+        knockChance = SandboxVars.BoxingGloveMod.KnockChance1
     elseif prim_name == "BoxingGlove 2 (Red)" then
         item_name = "Base.BoxingGloveRed2"
+        knockChance = SandboxVars.BoxingGloveMod.KnockChance2
     elseif prim_name == "BoxingGlove 3 (Red)" then
         item_name = "Base.BoxingGloveRed3"
+        knockChance = SandboxVars.BoxingGloveMod.KnockChance3
     elseif prim_name == "BoxingGlove 1 (Blue)" then
         item_name = "Base.BoxingGloveBlue1"
+        knockChance = SandboxVars.BoxingGloveMod.KnockChance1
     elseif prim_name == "BoxingGlove 2 (Blue)" then
         item_name = "Base.BoxingGloveBlue2"
+        knockChance = SandboxVars.BoxingGloveMod.KnockChance2
     elseif prim_name == "BoxingGlove 3 (Blue)" then
         item_name = "Base.BoxingGloveBlue3"
+        knockChance = SandboxVars.BoxingGloveMod.KnockChance3
     end
     if not item_name then
         return
@@ -400,6 +395,66 @@ function ModifyEquippedWeaponAttribute(attribute_key, attribute_value)
     end
 end
 
+local fresh_weap2 = true
+local knockMode = false
+local function calculateKnockChance(jabChance)
+    local player = getPlayer()
+    if not player then
+        return
+    end
+    local inv = player:getInventory()
+    if not inv then
+        return
+    end
+    local prim = player:getPrimaryHandItem()
+    if not prim then
+        return
+    end
+    local item_name
+    local knockChance
+    local prim_name = prim:getName()
+    if prim_name == "BoxingGlove 1 (Red)" then
+        item_name = "Base.BoxingGloveRed1"
+        knockChance = SandboxVars.BoxingGloveMod.KnockChance1
+    elseif prim_name == "BoxingGlove 2 (Red)" then
+        item_name = "Base.BoxingGloveRed2"
+        knockChance = SandboxVars.BoxingGloveMod.KnockChance2
+    elseif prim_name == "BoxingGlove 3 (Red)" then
+        item_name = "Base.BoxingGloveRed3"
+        knockChance = SandboxVars.BoxingGloveMod.KnockChance3
+    elseif prim_name == "BoxingGlove 1 (Blue)" then
+        item_name = "Base.BoxingGloveBlue1"
+        knockChance = SandboxVars.BoxingGloveMod.KnockChance1
+    elseif prim_name == "BoxingGlove 2 (Blue)" then
+        item_name = "Base.BoxingGloveBlue2"
+        knockChance = SandboxVars.BoxingGloveMod.KnockChance2
+    elseif prim_name == "BoxingGlove 3 (Blue)" then
+        item_name = "Base.BoxingGloveBlue3"
+        knockChance = SandboxVars.BoxingGloveMod.KnockChance3
+    end
+    if not item_name then
+        return
+    end
+
+    local swingChance = 100 - jabChance
+    swingChance = swingChance / 100
+    local swingKnockChance = knockChance / swingChance
+
+    local rand = ZombRand(100)
+    local knock = rand < swingKnockChance
+    if not fresh_weap2 and knock == knockMode then
+        return
+    end
+    fresh_weap2 = false
+    knockMode = knock
+    if knockMode then
+        ModifyWeaponAttribute(item_name, "AlwaysKnockdown", "TRUE")
+    else
+        ModifyWeaponAttribute(item_name, "AlwaysKnockdown", "FALSE")
+    end
+end
+
+local fresh_weap = true
 local jab = true
 function toggleSwingAnim()
     local rand = ZombRand(100)
@@ -413,15 +468,25 @@ function toggleSwingAnim()
 
     local next_jab = rand < thresh
 
-    if jab == next_jab then
+    if not next_jab then
+        calculateKnockChance(thresh)
+    end
+
+    if not fresh_weap and jab == next_jab then
         return
     end
+    fresh_weap = false
     jab = next_jab
     if jab then
         ModifyEquippedWeaponAttribute("SwingAnim", "Stab")
     else
         ModifyEquippedWeaponAttribute("SwingAnim", "Bat")
     end
+end
+
+function resetSavedSwingToggle()
+    fresh_weap = true
+    fresh_weap2 = true
 end
 
 Events.OnEquipPrimary.Add(ManageGlovesRed)
@@ -434,6 +499,7 @@ Events.OnGameStart.Add(updateInventoryItems)
 --Events.OnMainMenuEnter.Add(ApplyDropRates)
 --Events.OnLoad.Add(ApplyDropRates)
 --Events.OnResetLua.Add(ApplyDropRates)
+Events.OnEquipPrimary.Add(resetSavedSwingToggle)
 Events.OnPlayerAttackFinished.Add(toggleSwingAnim)
 
 --Events.OnWeaponSwingHitPoint.Add()
