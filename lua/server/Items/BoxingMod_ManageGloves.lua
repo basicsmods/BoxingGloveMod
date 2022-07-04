@@ -438,6 +438,10 @@ local function calculateKnockChance(jabChance)
 
     local swingChance = 100 - jabChance
     swingChance = swingChance / 100
+    if swingChance == 0 then
+        -- so we don't divide by 0
+        swingChance = 0.01
+    end
     local swingKnockChance = knockChance / swingChance
 
     local rand = ZombRand(100)
