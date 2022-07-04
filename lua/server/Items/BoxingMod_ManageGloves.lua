@@ -389,6 +389,8 @@ function ModifyEquippedWeaponAttribute(attribute_key, attribute_value)
     end
     inv:Remove(prim)
     new_weap = inv:AddItem(item_name)
+    new_weap:setCondition(condition)
+    new_weap:setHaveBeenRepaired(repair)
     player:setPrimaryHandItem(new_weap)
     if attached then
         player:setAttachedItem("Big Weapon On Back", new_weap);
@@ -398,17 +400,27 @@ function ModifyEquippedWeaponAttribute(attribute_key, attribute_value)
     end
 end
 
-local prev = 5
+local jab = true
 function toggleSwingAnim()
-    local rand = ZombRand(2)
-    if rand == prev then
+    local rand = ZombRand(100)
+    local thresh = 50
+    if BoxingGloveMod.Settings then
+        local ratio = BoxingGloveMod.Settings:Get("WEAPON_JABRATIO")
+        if ratio then
+            thresh = ratio * 100
+        end
+    end
+
+    local next_jab = rand < thresh
+
+    if jab == next_jab then
         return
     end
-    prev = rand
-    if rand == 1 then
-        ModifyEquippedWeaponAttribute("SwingAnim", "Bat")
-    else
+    jab = next_jab
+    if jab then
         ModifyEquippedWeaponAttribute("SwingAnim", "Stab")
+    else
+        ModifyEquippedWeaponAttribute("SwingAnim", "Bat")
     end
 end
 

@@ -10,7 +10,8 @@ Things I'd like to add:
 - (Done) Make it so the weapon has a random chance to change its swinganim with each swing.
 - (Done) Add stars to the icons.
 - Add a hotkey that toggles (or two hotkeys for choosing specifically) a jab punch (stab animation) vs swing punch (bat animation). Give the weapon different stats based on the active swingAnim (jab faster, but no knock and more push?)
-- Only reload lua when applying settings if one of our settings was changed.
+- (Done; got rid of reload entirely. User must reload themselves after changing drop rates for them to actually take effect.) Only reload lua when applying settings if one of our settings was changed.
+- (Done; but it's an in-game client-side setting rather than sandbox) Add a weapon sandbox option for the odds of a stab vs a swing.
 
 (Unrelated to this mod)
 - Add hotkey to cycle through containers without needing to mouse over the window.

@@ -4,5 +4,6 @@ UI_EN = {
     UI_Droprate = "BoxingGlove 1 Drop Rate (Default: 3)",
     UI_Droprate2 = "BoxingGlove 2 Drop Rate (Default: 0.75)",
     UI_Droprate3 = "BoxingGlove 3 Drop Rate (Default: 0.1)",
+    UI_JabRatio = "BoxingGlove Ratio of Jabs vs Swings (Default: 0.4)",
 
 }

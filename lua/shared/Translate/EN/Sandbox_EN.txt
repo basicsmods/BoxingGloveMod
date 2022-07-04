@@ -11,7 +11,7 @@ Sandbox_EN = {
     Sandbox_BoxingGloveMod_MaxDurability = "Max Durability",
     Sandbox_BoxingGloveMod_DurabilityLossOneIn = "Durability Loss One In",
     Sandbox_BoxingGloveMod_PushBackMod = "Push Back Mod",
-    Sandbox_BoxingGloveMod_KnockdownMod = "Knockdown Mod",
+    Sandbox_BoxingGloveMod_KnockdownMod = "Knockdown Mod (Only applies to Swing attacks; Jabs can't knock)",
     Sandbox_BoxingGloveMod_TreeDamage = "Tree Damage",
 
     Sandbox_BoxingGloveMod_BoxingGlove1Preset = "BoxingGlove 1 Preset",

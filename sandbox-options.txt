@@ -90,7 +90,7 @@ option BoxingGloveMod.PushBackMod1
 
 option BoxingGloveMod.KnockdownMod1
 {
-	type = double, min = 0.01, max = 100, default = 0.3,
+	type = double, min = 0.01, max = 100, default = 1,
 	page = BoxingGloveMod,
 	translation = BoxingGloveMod_KnockdownMod,
 }
@@ -188,7 +188,7 @@ option BoxingGloveMod.PushBackMod2
 
 option BoxingGloveMod.KnockdownMod2
 {
-	type = double, min = 0.01, max = 100, default = 0.3,
+	type = double, min = 0.01, max = 100, default = 1,
 	page = BoxingGloveMod,
 	translation = BoxingGloveMod_KnockdownMod,
 }
@@ -285,7 +285,7 @@ option BoxingGloveMod.PushBackMod3
 
 option BoxingGloveMod.KnockdownMod3
 {
-	type = double, min = 0.01, max = 100, default = 0.3,
+	type = double, min = 0.01, max = 100, default = 1,
 	page = BoxingGloveMod,
 	translation = BoxingGloveMod_KnockdownMod,
 }

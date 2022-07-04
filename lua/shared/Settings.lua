@@ -4,7 +4,8 @@ BoxingGloveMod.Settings = BoxingGloveMod.Settings or {};
 local defaultSettings = {
     WEAPON1_DROPRATE = 3,
     WEAPON2_DROPRATE = 0.75,
-    WEAPON3_DROPRATE = 0.1
+    WEAPON3_DROPRATE = 0.1,
+    WEAPON_JABRATIO = 0.4
 };
 
 ---
