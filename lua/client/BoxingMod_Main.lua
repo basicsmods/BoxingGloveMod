@@ -20,19 +20,6 @@ function BoxingGloveMod:InitOptions()
         scrollHeight = scrollHeight + delta + amount + padding;
     end
 
-    -- message drop down
-    local msgs = {"Thanks :)"};
-    ypos = ypos + delta;
-    local msgComboBox = MainOptions.instance:addCombo(splitpoint, ypos, comboWidth, 20, getText("You MUST reload your lua for new drop rates to take effect (toggle a mod on then off to reload lua)."), msgs, 1);
-    local msgComboOption = BoxingGloveMod.GameOption:new('ReloadPls', msgComboBox);
-    MainOptions.instance.gameOptions:add(msgComboOption);
-    addScrollHeight(msgComboBox:getHeight());
-    ypos = ypos + delta;
-    local msgComboBox2 = MainOptions.instance:addCombo(splitpoint, ypos, comboWidth, 20, getText("Only server host's settings apply."), msgs, 1);
-    local msgComboOption2 = BoxingGloveMod.GameOption:new('ReloadPls', msgComboBox2);
-    MainOptions.instance.gameOptions:add(msgComboOption2);
-    addScrollHeight(msgComboBox2:getHeight());
-
     -- create dropdowns for droprates
     local droprates = {"0","0.01","0.05","0.1","0.2","0.3","0.4","0.5","0.75","1","1.25","1.5","2","2.5","3","3.5","4","5","7.5","10","15","20","25","50","150"};
     ypos = ypos + delta;
@@ -83,22 +70,30 @@ function BoxingGloveMod:InitOptions()
     MainOptions.instance.gameOptions:add(dropRateComboOption3);
     addScrollHeight(dropRateComboBox3:getHeight());
 
-    local jab_ratios = {"0","0.1","0.2","0.3","0.4","0.5","0.6","0.7","0.8","0.9","1"}
+    -- message drop down
+    local msgs = {"Thanks :)"};
     ypos = ypos + delta;
-    local jabRatioComboBox = MainOptions.instance:addCombo(splitpoint, ypos, comboWidth, 20, getText("UI_JabRatio"), jab_ratios, 1);
-    local jabRatioComboOption = BoxingGloveMod.GameOption:new('jabRatioComboBox', jabRatioComboBox);
-    function jabRatioComboOption.toUI(self)
-        self.control:select(tostring(BoxingGloveMod.Settings:Get("WEAPON_JABRATIO")));
+    local msgComboBox2 = MainOptions.instance:addCombo(splitpoint, ypos, comboWidth, 20, getText("Only server host's drop rate settings apply."), msgs, 1);
+    local msgComboOption2 = BoxingGloveMod.GameOption:new('ReloadPls', msgComboBox2);
+    MainOptions.instance.gameOptions:add(msgComboOption2);
+    addScrollHeight(msgComboBox2:getHeight());
+
+    local swing_ratios = {"0","0.1","0.2","0.3","0.4","0.5","0.6","0.7","0.8","0.9","1"}
+    ypos = ypos + delta;
+    local swingRatioComboBox = MainOptions.instance:addCombo(splitpoint, ypos, comboWidth, 20, getText("UI_SwingRatio"), swing_ratios, 1);
+    local swingRatioComboOption = BoxingGloveMod.GameOption:new('swingRatioComboBox', swingRatioComboBox);
+    function swingRatioComboOption.toUI(self)
+        self.control:select(tostring(BoxingGloveMod.Settings:Get("WEAPON_SWINGRATIO")));
     end
-    function jabRatioComboOption.apply(self)
+    function swingRatioComboOption.apply(self)
         local value = self.control.options[self.control.selected];
 
         -- serialize category option
-        Settings:Set("WEAPON_JABRATIO", value);
+        Settings:Set("WEAPON_SWINGRATIO", value);
         Settings:Serialize();
     end
-    MainOptions.instance.gameOptions:add(jabRatioComboOption);
-    addScrollHeight(jabRatioComboBox:getHeight());
+    MainOptions.instance.gameOptions:add(swingRatioComboOption);
+    addScrollHeight(swingRatioComboBox:getHeight());
 
     -- set our panel scroll height
     MainOptions.instance.mainPanel:setScrollHeight(scrollHeight + delta);

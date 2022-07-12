@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fileGuidTable>
+
+	<files>
+		<path>media/clothing/clothingItems/Gloves_BoxingBlack.xml</path>
+		<guid>9536e39a-d078-490c-bf8e-93266359fb1b</guid>
+	</files>
+	<files>
+		<path>media/clothing/clothingItems/Gloves_BoxingBlue.xml</path>
+		<guid>a3d58ad5-1569-4ae9-8837-a6f1a13dcda5</guid>
+	</files>
+	<files>
+		<path>media/clothing/clothingItems/Gloves_BoxingRed.xml</path>
+		<guid>5e24fec2-4832-49c5-bb24-f73744e13a85</guid>
+	</files>
+	<files>
+		<path>media/clothing/clothingItems/Gloves_BoxingWhite.xml</path>
+		<guid>5340516b-b107-44b1-b2e6-3c621ed91394</guid>
+	</files>
+	<files>
+		<path>media/clothing/clothingItems/Gloves_BoxingPink.xml</path>
+		<guid>0d192c3c-0cb2-40d9-8857-76c3cdd92e28</guid>
+	</files>	
+</fileGuidTable>

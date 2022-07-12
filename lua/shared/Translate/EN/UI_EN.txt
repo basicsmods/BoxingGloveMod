@@ -1,9 +1,9 @@
 UI_EN = {
     UI_optionscreen_binding_BoxingGloveMod = "BoxingGlove",
 
-    UI_Droprate = "BoxingGlove 1 Drop Rate (Default: 3)",
-    UI_Droprate2 = "BoxingGlove 2 Drop Rate (Default: 0.75)",
-    UI_Droprate3 = "BoxingGlove 3 Drop Rate (Default: 0.1)",
-    UI_JabRatio = "BoxingGlove Ratio of Jabs vs Swings (Default: 0.4)",
+    UI_Droprate = "BoxingGlove 1 Drop Rate (Half to red, half to blue) (Default: 5)",
+    UI_Droprate2 = "BoxingGlove 2 Drop Rate (Can be upgraded to from tier 1) (Default: 0)",
+    UI_Droprate3 = "BoxingGlove 3 Drop Rate (Can be upgraded to from tier 2) (Default: 0)",
+    UI_SwingRatio = "BoxingGlove Ratio of Swings vs Jabs (Default: 0.6)",
 
 }

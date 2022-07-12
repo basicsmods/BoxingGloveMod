@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>media\models_X\Skinned\Clothes\M_BoxingGloves.X</m_MaleModel>
+	<m_FemaleModel>media\models_X\Skinned\Clothes\M_BoxingGloves.X</m_FemaleModel>
+	<m_GUID>0d192c3c-0cb2-40d9-8857-76c3cdd92e28</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<m_MasksFolder>media/textures/Clothes/Hat/Masks</m_MasksFolder>
+	<textureChoices>clothes\gloves\boxinggloves_pink</textureChoices>
+</clothingItem>

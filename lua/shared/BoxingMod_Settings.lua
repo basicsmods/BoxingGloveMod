@@ -1,11 +1,11 @@
-require("BoxingGloveMod/AAConstants");
+require("BoxingMod_AAConstants");
 
 BoxingGloveMod.Settings = BoxingGloveMod.Settings or {};
 local defaultSettings = {
-    WEAPON1_DROPRATE = 3,
-    WEAPON2_DROPRATE = 0.75,
-    WEAPON3_DROPRATE = 0.1,
-    WEAPON_JABRATIO = 0.4
+    WEAPON1_DROPRATE = DEFAULT_DROPRATE,
+    WEAPON2_DROPRATE = DEFAULT_DROPRATE2,
+    WEAPON3_DROPRATE = DEFAULT_DROPRATE3,
+    WEAPON_SWINGRATIO = 0.6
 };
 
 ---
